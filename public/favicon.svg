@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g fill="none" stroke="#ff0000" stroke-width="2">
+    <path d="M10 15 Q25 5 40 15 L40 35 Q25 45 10 35 Z" />
+    <line x1="10" y1="15" x2="10" y2="35" />
+    <line x1="40" y1="15" x2="40" y2="35" />
+    <line x1="10" y1="25" x2="40" y2="25" />
+  </g>
+</svg>
