@@ -2,11 +2,16 @@ import "./App.css";
 import { FaCar } from "react-icons/fa";
 import { Card, CardContent, CardHeader, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+
 export default function App() {
   // Framer Motion animation settings
   const cardVariants = {
     hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0 },
+  };
+
+  const handleNewsCardClick = () => {
+    window.location.href = "https://example.com/article";
   };
 
   return (
@@ -24,10 +29,7 @@ export default function App() {
       </nav>
       <main className="main">
         <div className="manufacturer-spotlight">
-          <img
-            src="/nio2.png"
-            alt="Manufacturer Spotlight"
-          />
+          <img src="/nio2.png" alt="Manufacturer Spotlight" />
           <h2 className="manufacturer-spotlight-text">Manufacturer Spotlight</h2>
         </div>
         <p>Discover the future of automotive innovation.</p>
@@ -38,21 +40,22 @@ export default function App() {
           variants={cardVariants}
           transition={{ duration: 0.5 }}
         >
-          <img
-            src="https://via.placeholder.com/1920x1080"
-            alt="Second Card"
-          />
+          <img src="/gerc.png" alt="Second Card" />
         </motion.div>
         <div className="news-section">
           {Array(3).fill().map((_, i) => (
             <motion.div
               initial="hidden"
               animate="visible"
+              className="news-card-wrapper"
               variants={cardVariants}
               transition={{ duration: 0.5, delay: 0.3 * i }}
+              onClick={handleNewsCardClick}
             >
               <Card className="news-card" key={i}>
-                <CardHeader title="News Title" />
+                <div className="news-card-image" style={{ backgroundImage: `url(/news-image-${i + 1}.jpg)` }}>
+                  <h3 className="news-card-overlay-text">News Title</h3>
+                </div>
                 <CardContent>
                   <Typography variant="body2" color="textSecondary" component="p">
                     Placeholder content for a news item.
