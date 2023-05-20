@@ -16,7 +16,8 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.1",
     "framer-motion": "^10.12.12",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "react-typist-component": "^1.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

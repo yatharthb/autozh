@@ -7,44 +7,30 @@ html {
 
 body {
   background-image: var(--background-gradient);
-  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Navbar styles */
-.navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 100;
+/* NewsCards styles */
+.NewsCards {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(15, 76, 117, 0.1);
-  color: #bbe1fa;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.NewsCard {
+  flex: 1;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
-.logo-text {
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
+.NewsCard:hover {
+  transform: scale(1.05);
 }
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-link {
-  list-style: none;
-}
-
 /* Main content styles */
 .main {
   color: #bbe1fa;
@@ -62,6 +48,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+.manufacturer-spotlight:hover img {
+  filter: brightness(70%);
 }
 
 .manufacturer-spotlight-text {
@@ -70,6 +61,7 @@ body {
   left: 5%;
   color: #bbe1fa;
   font-size: 3rem;
+  font-weight: 600;
 }
 
 .second-card {
@@ -89,36 +81,6 @@ body {
 .second-card:hover img {
   transform: scale(1.5);
 }
-
-.news-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.news-card {
-  background-image: var(--background-gradient);
-  padding: 1rem;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.news-card-image {
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.news-card-overlay-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #fff;
-}
-
 
 /* Footer styles */
 .footer {
@@ -141,6 +103,7 @@ body {
 
 .footer-column h3 {
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .footer-link {
