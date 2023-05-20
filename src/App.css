@@ -33,7 +33,7 @@ body {
 }
 /* Main content styles */
 .main {
-  color: #bbe1fa;
+  color: rgb(61 173 246);
   padding: 2rem;
 }
 
@@ -108,6 +108,6 @@ body {
 
 .footer-link {
   text-decoration: none;
-  color: #bbe1fa;
+  color: #47acef;
   margin-bottom: 0.5rem;
 }

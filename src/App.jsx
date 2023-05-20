@@ -21,20 +21,20 @@ const GlobalStyle = createGlobalStyle`
 `;
 const newsItems = [
   {
-    title: 'Breaking News 1',
-    description: 'Discover the future of automotive innovation 1.',
+    title: 'Nio Wins Staionary Storage',
+    description: 'The new Nio EelJar stores 100 GWh and fits in your trunk.',
     imageUrl: '/btp.png',
     url: 'https://example.com/article1',
   },
   {
-    title: 'Breaking News 2',
-    description: 'Discover the future of automotive innovation 2.',
+    title: 'Charging Stations for Penguins',
+    description: 'Nio opens its first charging station in Antarctica.',
     imageUrl: '/sld.png',
     url: 'https://example.com/article2',
   },
   {
-    title: 'Breaking News 3',
-    description: 'Discover the future of automotive innovation 3.',
+    title: 'Nio - The Unchallenged Customer Service Contender',
+    description: 'Learn how Nio is able to deliver repairs in under 30 minutes.',
     imageUrl: '/van.png',
     url: 'https://example.com/article3',
   },
@@ -46,32 +46,50 @@ const Navbar = styled.nav`
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  font-size: 1.5rem;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem 2rem;
   background-color: rgba(15, 76, 117, 0.1);
-  color: #bbe1fa;
+  color: #3e424d;
 `;
 
 const Logo = styled.div`
   display: flex;
   align-items: center;
 `;
-
+const TypistWrapper = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  color: white;
+  transform: translateX(-50%);
+  font-size: 2rem; // Adjust the font size here
+  text-align: center;
+`;
 const LogoText = styled.h1`
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-left: 0.5rem;
+  
+  background: -webkit-linear-gradient(rgb(61 173 246), #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
-const NavLinks = styled.ul`
+const NavLinks = styled.div`
   display: flex;
   gap: 1.5rem;
 `;
 
-const NavLink = styled.li`
-list-style-position: initial;
-
+const NavLink = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
+
 
 const NewsCards = styled.div`
   display: flex;
@@ -114,24 +132,25 @@ export default function App() {
     <>
       <GlobalStyle />
       <Navbar>
-        <Logo>
-          <FaCar size="2rem" />
-          <LogoText>AutoZhong</LogoText>
-        </Logo>
-        <NavLinks>
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Contact</NavLink>
-        </NavLinks>
-        </Navbar>
+  <Logo>
+    <FaCar size="2rem" />
+    <LogoText>AutoZhong</LogoText>
+  </Logo>
+  <NavLinks>
+    <NavLink>Home</NavLink>
+    <NavLink>About</NavLink>
+    <NavLink>Contact</NavLink>
+  </NavLinks>
+</Navbar>
       <main className="main">
-        <div className="manufacturer-spotlight">
+      <div className="manufacturer-spotlight">
           <img src="/nio2.png" alt="Manufacturer Spotlight" />
-          <div style={{ position: 'absolute', bottom: '10px', left: '10px', color: 'white' }}>
+          <TypistWrapper>
             <Typist>
               This is the manufacturer spotlight. <Typist.Delay ms={500} /> Check out our latest features...
             </Typist>
-          </div>
+          </TypistWrapper>
+          
         </div>
         <p>Discover the future of automotive innovation.</p>
         <motion.div
@@ -182,7 +201,7 @@ export default function App() {
         </div>
         <div className="footer-column">
           <p>
-            © {new Date().getFullYear()} AutoFuturist Media Company. All rights
+            © {new Date().getFullYear()} AutoZhong Media Company. All rights
             reserved.
           </p>
         </div>
